@@ -1,0 +1,32 @@
+{% extends 'base.html' %}
+
+{% block title %}Lista de Libros{% endblock %}
+
+{% block content %}
+    <h2>Libros Disponibles</h2>
+    <a href="{% url 'crear_libro' %}">Añadir Libro</a>
+    <table>
+        <thead>
+            <tr>
+                <th>Título</th>
+                <th>ISBN</th>
+                <th>Disponibles</th>
+                <th>Acciones</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for libro in libros %}
+                <tr>
+                    <td>{{ libro.titulo }}</td>
+                    <td>{{ libro.isbn }}</td>
+                    <td>{{ libro.disponibilidad }}</td>
+                    <td>
+                        <!-- Enlaces para editar o eliminar si tienes permisos -->
+                        <a href="#">Editar</a>
+                        <a href="#">Eliminar</a>
+                    </td>
+                </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+{% endblock %}

@@ -1,0 +1,35 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{% block title %}Sistema de Biblioteca{% endblock %}</title>
+    <link rel="stylesheet" href="{% static 'css/estilos.css' %}">
+</head>
+<body>
+    <header>
+        <h1>Biblioteca</h1>
+        <nav>
+            <a href="/">Inicio</a>
+            <a href="/libros/">Libros</a>
+            {% if user.is_authenticated %}
+                <a href="/prestamos/">Préstamos</a>
+                <a href="/reservas/">Reservas</a>
+                <a href="/usuarios/">Usuarios</a>
+                <a href="/logout/">Cerrar Sesión</a>
+            {% else %}
+                <a href="/login/">Iniciar Sesión</a>
+            {% endif %}
+        </nav>
+        <button id="toggle-theme" class="btn">Modo Noche</button>
+    </header>
+    <main>
+        {% block content %}
+
+        {% endblock %}
+    </main>
+
+    <script src="{% static 'js/js.js' %}"></script>
+</body>
+</html>

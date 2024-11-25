@@ -1,0 +1,388 @@
+/* Modo Día (Por defecto) */
+body {
+    font-family: 'Roboto', Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f4f4f9; /* Fondo claro */
+    color: #333; /* Color de texto oscuro */
+    line-height: 1.6;
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh; /* Asegura que el contenido ocupe toda la altura de la ventana */
+}
+
+a {
+    text-decoration: none;
+    color: #007bff; /* Azul profesional */
+}
+
+a:hover {
+    color: #0056b3; /* Azul más oscuro en hover */
+}
+
+/* Modo Noche */
+body.dark-mode {
+    background-color: #1e1e2f; /* Fondo oscuro */
+    color: #f4f4f9; /* Texto claro */
+}
+
+body.dark-mode a {
+    color: #ffa500; /* Enlaces en modo noche */
+}
+
+body.dark-mode a:hover {
+    color: #ff7800; /* Hover para enlaces en modo noche */
+}
+
+/* Encabezado */
+header {
+    background-color: #1e1e2f; /* Fondo oscuro */
+    color: #fff; /* Texto blanco */
+    padding: 1rem 0;
+    text-align: center;
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+header h1 {
+    font-size: 2rem;
+    margin: 0;
+}
+
+header nav {
+    margin-top: 0.5rem;
+}
+
+header nav a {
+    margin: 0 1rem;
+    font-size: 1rem;
+    font-weight: 500;
+}
+
+header nav a:hover {
+    color: #ff9800; /* Resalta el enlace en hover */
+}
+
+/* Cambios en modo noche */
+body.dark-mode header {
+    background-color: #333;
+}
+
+body.dark-mode header nav a {
+    color: #ffa500;
+}
+
+/* Botón Modo Día/Noche */
+button, .btn {
+    background-color: #007bff;
+    color: #fff;
+    border: none;
+    padding: 0.75rem 1.5rem;
+    font-size: 1rem;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+button:hover, .btn:hover {
+    background-color: #0056b3;
+}
+
+button:disabled, .btn:disabled {
+    background-color: #d6d6d6;
+    cursor: not-allowed;
+}
+
+body.dark-mode button {
+    background-color: #555;
+    color: white;
+}
+
+body.dark-mode button:hover {
+    background-color: #444;
+}
+
+/* Contenedor Principal */
+main {
+    max-width: 1200px;
+    margin: 2rem auto;
+    padding: 1rem;
+    background: #ffffff;
+    border-radius: 8px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+}
+
+/* Cambios en modo noche */
+body.dark-mode main {
+    background-color: #333;
+    color: #f4f4f9;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.5);
+}
+
+/* Títulos */
+h2 {
+    font-size: 1.75rem;
+    color: #1e1e2f;
+    margin-bottom: 1rem;
+    border-bottom: 2px solid #1e1e2f;
+    padding-bottom: 0.5rem;
+}
+
+body.dark-mode h2 {
+    color: #ffa500;
+    border-color: #ffa500;
+}
+
+/* Listas */
+ul {
+    list-style-type: none;
+    padding: 0;
+}
+
+ul li {
+    background: #f9f9f9;
+    margin: 0.5rem 0;
+    padding: 0.75rem;
+    border-radius: 4px;
+    border: 1px solid #ddd;
+    transition: box-shadow 0.3s ease;
+}
+
+ul li:hover {
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+}
+
+/* Cambios en modo noche */
+body.dark-mode ul li {
+    background-color: #333;
+    border-color: #555;
+    color: #f4f4f9;
+}
+
+body.dark-mode ul li:hover {
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.5);
+}
+
+/* Footer */
+footer {
+    background-color: #1e1e2f;
+    color: #fff;
+    text-align: center;
+    padding: 1rem 0;
+    font-size: 0.875rem;
+    width: 100%; /* Asegura que ocupe todo el ancho */
+    position: fixed; /* Fija el footer al fondo */
+    bottom: 0;
+    left: 0;
+    z-index: 100;
+    box-shadow: 0 -2px 5px rgba(0, 0, 0, 0.1);
+}
+
+body.dark-mode footer {
+    background-color: #333;
+    color: #ffa500;
+}
+
+/* Tarjetas */
+.card {
+    background: #ffffff;
+    border-radius: 8px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    padding: 1.5rem;
+    margin-bottom: 1.5rem;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
+}
+
+/* Cambios en modo noche */
+body.dark-mode .card {
+    background-color: #333;
+    color: #f4f4f9;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.5);
+}
+
+/* Responsivo */
+@media (max-width: 768px) {
+    header h1 {
+        font-size: 1.5rem;
+    }
+
+    header nav a {
+        margin: 0 0.5rem;
+        font-size: 0.875rem;
+    }
+
+    main {
+        padding: 1rem;
+    }
+
+    h2 {
+        font-size: 1.5rem;
+    }
+}
+
+/*PARA EL LOGIN Y REGISTROxs*/
+/* Organización en filas */
+.form-row {
+    display: flex;
+    gap: 15px; /* Espaciado horizontal entre los campos */
+    margin-bottom: 20px; /* Espaciado vertical entre filas */
+}
+
+.form-group {
+    flex: 1; /* Cada campo ocupa la mitad del espacio disponible */
+}
+
+@media (max-width: 768px) {
+    .form-row {
+        flex-direction: column; /* Para pantallas pequeñas, los campos se apilan */
+    }
+}
+
+
+.auth-container {
+    display: flex;
+    height: 70vh;
+    margin: 20px;
+    background: #292b2f;
+    border-radius: 10px;
+    overflow: hidden;
+}
+
+.auth-left {
+    position: relative;
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    padding: 40px;
+    background: url("../images/bg-auth.jpeg") no-repeat center center;
+    background-size: cover;
+    color: white;
+}
+
+.auth-left::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.5); /* Overlay negro semitransparente */
+    z-index: 1; /* Coloca el overlay detrás del contenido */
+}
+
+.auth-left h1,
+.auth-left p {
+    position: relative;
+    z-index: 2; /* Asegura que el texto esté encima del overlay */
+}
+
+
+.auth-left h1 {
+    font-size: 2rem;
+    margin-bottom: 20px;
+}
+
+.auth-left p {
+    font-size: 1.2rem;
+    margin-bottom: 20px;
+}
+
+.auth-left img {
+    width: 200px;
+    height: auto;
+}
+
+.auth-right {
+    flex: 1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: #1f2023;
+    padding: 20px; /* Agrega espacio interno alrededor del formulario */
+    box-sizing: border-box; /* Asegúrate de que el padding no afecte el tamaño total */
+}
+
+.auth-form {
+    width: 100%;
+    max-width: 400px; /* Mantén el ancho máximo */
+    background: #292b2f;
+    padding: 30px; /* Agrega espacio interno dentro del formulario */
+    border-radius: 10px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+    color: white;
+    margin: 20px 0; /* Agrega separación arriba y abajo del formulario */
+}
+
+
+.auth-form h2 {
+    font-size: 1.5rem;
+    margin-bottom: 20px;
+    text-align: center;
+}
+
+.form-group {
+    margin-bottom: 15px;
+}
+
+.form-group label {
+    display: block;
+    font-size: 1rem;
+    margin-bottom: 5px;
+}
+
+.form-group input {
+    width: 100%;
+    padding: 10px;
+    border: none;
+    border-radius: 5px;
+    background: #3e3945;
+    color: white;
+    font-size: 1rem;
+}
+
+.form-group input:focus {
+    outline: none;
+    border: 1px solid #ffc107;
+}
+
+.btn-submit {
+    width: 100%;
+    padding: 10px;
+    background: #ffc107;
+    border: none;
+    border-radius: 5px;
+    font-size: 1.2rem;
+    font-weight: bold;
+    color: #292b2f;
+    cursor: pointer;
+    margin-top: 20px;
+}
+
+.btn-submit:hover {
+    background: #e0a700;
+}
+
+.auth-footer {
+    text-align: center;
+    font-size: 1rem;
+    margin-top: 20px;
+}
+
+.auth-footer a {
+    color: #ffc107;
+    text-decoration: none;
+}
+
+.auth-footer a:hover {
+    text-decoration: underline;
+}

@@ -1,0 +1,25 @@
+{% extends 'base.html' %}
+
+{% block title %}Registrar Reserva{% endblock %}
+
+{% block content %}
+    <h2>Registrar Reserva</h2>
+    <form method="post">
+        {% csrf_token %}
+        <label for="usuario">Usuario:</label>
+        <select name="usuario" id="usuario">
+            {% for usuario in usuarios %}
+                <option value="{{ usuario.id }}">{{ usuario.username }}</option>
+            {% endfor %}
+        </select>
+
+        <label for="ejemplar">Ejemplar:</label>
+        <select name="ejemplar" id="ejemplar">
+            {% for ejemplar in ejemplares %}
+                <option value="{{ ejemplar.id }}">{{ ejemplar }}</option>
+            {% endfor %}
+        </select>
+
+        <button type="submit">Registrar</button>
+    </form>
+{% endblock %}

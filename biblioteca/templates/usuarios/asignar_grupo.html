@@ -1,0 +1,17 @@
+{% extends 'base.html' %}
+
+{% block title %}Asignar Grupo{% endblock %}
+
+{% block content %}
+    <h2>Asignar Grupo a {{ usuario.username }}</h2>
+    <form method="post">
+        {% csrf_token %}
+        <label for="grupo">Seleccionar Grupo:</label>
+        <select name="grupo" id="grupo">
+            {% for grupo in grupos %}
+                <option value="{{ grupo.id }}">{{ grupo.name }}</option>
+            {% endfor %}
+        </select>
+        <button type="submit">Asignar</button>
+    </form>
+{% endblock %}
